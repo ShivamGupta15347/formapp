@@ -27,7 +27,7 @@ function App() {
     mode: "",
     favCar: " ",
   });
-  console.log(formData);
+  // console.log(formData);
 
   function changeHandler(event) {
     const { name, value, checked, type } = event.target;
@@ -38,9 +38,15 @@ function App() {
       };
     });
   }
+
+  function submitHandler(event) {
+    event.preventDefault();
+    console.log("Finally Printing the entire Form ka data...");
+    console.log(formData);
+  }
   return (
     <div className="App">
-      <form>
+      <form onSubmit={submitHandler}>
         <br />
         <input
           type="text"
